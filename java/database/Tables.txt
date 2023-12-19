@@ -1,0 +1,19 @@
+Tables
+----
+
+Users
+Games (this is probably gonna have a ton of stuff depending on what we care about)
+Ratings (this is from a User for a Game)
+Reviews (this is from a User for a Game)
+Comments (this from a User to someone else's Review)
+Game List (From a user with varying types like played, currently playing, want to play, or custom)
+
+
+
+RP	6
+EC	7
+E	8
+E10	9
+T	10
+M	11
+AO	12

@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "ce3d49a3-3212-4893-8af6-3f889cee1195",
+		"name": "Final Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30717315"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Register New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rich\",\r\n    \"password\": \"rich\",\r\n    \"confirmPassword\": \"rich\",\r\n    \"role\": \"ROLE_USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rich\",\r\n    \"password\": \"rich\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3rd Party Database",
+			"item": [
+				{
+					"name": "Games",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer pxqf3qndpdmrh9zjgw03bzfkc2ujxo",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields id, name, summary, age_ratings.category, age_ratings.rating, release_dates.region, release_dates.date, cover.image_id, platforms.name, genres.name, involved_companies.publisher, involved_companies.developer, involved_companies.company.name, involved_companies.company.description, involved_companies.company.logo.image_id, websites.url, websites.category;\r\nwhere id = 5734;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/games",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 0z7asu1wrw905ktxewy1f7jey55czm",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields *;\r\nlimit 50;\r\noffset 44;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/games",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Games Count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 0z7asu1wrw905ktxewy1f7jey55czm",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Test;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/games/count",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"games",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Games dumb",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 0z7asu1wrw905ktxewy1f7jey55czm",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields *;\r\nlimit 1;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/games",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Games By Title Search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer knfclc2k1dfxh5nxdnqgk2es8gpg1p",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields id, name, age_ratings.category, age_ratings.rating, release_dates.region, release_dates.date, cover.image_id;\r\nsearch \"extreme-g\";\r\nlimit 100;\r\nwhere age_ratings.rating < 10;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/games",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Age Rating Content Description",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 0z7asu1wrw905ktxewy1f7jey55czm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields category, checksum, description;\r\nwhere id = 117500;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/age_rating_content_descriptions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"age_rating_content_descriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Age Rating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer noz2rv1erd5sfkr4em5bgor3jzvaf3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields *, content_descriptions.*;\r\nwhere id = 5629;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/age_ratings",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"age_ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Covers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer rbfqqxsvxxhw1alkb6r40io1s4wgpq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields image_id;\r\nwhere id = 220052;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/covers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"covers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Platforms",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 0z7asu1wrw905ktxewy1f7jey55czm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields id, name;\r\nwhere id = 8;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/platforms",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Involved Companies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer noz2rv1erd5sfkr4em5bgor3jzvaf3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields id, game, company, developer, publisher;\r\nwhere id = 154771;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/involved_companies",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"involved_companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Companies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "fp9g0g4yqrpfwoijr9iimtenbzigld",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer noz2rv1erd5sfkr4em5bgor3jzvaf3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fields id, name, description;\r\nwhere id = 617;"
+						},
+						"url": {
+							"raw": "https://api.igdb.com/v4/companies",
+							"protocol": "https",
+							"host": [
+								"api",
+								"igdb",
+								"com"
+							],
+							"path": [
+								"v4",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3rd Party Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://id.twitch.tv/oauth2/token?client_id=fp9g0g4yqrpfwoijr9iimtenbzigld&client_secret=o1gjjylmv8srsdy3z1mftu92hz32wx&grant_type=client_credentials",
+							"protocol": "https",
+							"host": [
+								"id",
+								"twitch",
+								"tv"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "fp9g0g4yqrpfwoijr9iimtenbzigld"
+								},
+								{
+									"key": "client_secret",
+									"value": "o1gjjylmv8srsdy3z1mftu92hz32wx"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2n11fxsytw1tvsapjgij3g1bxexi17",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Our Database",
+			"item": [
+				{
+					"name": "get game by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/game/3218",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"game",
+								"3218"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRandomGame",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/randomGame",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"randomGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get game by search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/game?stringSearch=call+of+duty",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"game"
+							],
+							"query": [
+								{
+									"key": "stringSearch",
+									"value": "call+of+duty"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzAyNTA5Nzc3fQ.At_zic7l-IY_8fc3_SczApVRBJqwkVkJOLtc9kd3UHqJ8fzLHndQBdNlPsn7z3E5OmA3ojrvvhLU5vAzL4JwvQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
